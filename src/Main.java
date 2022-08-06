@@ -120,7 +120,50 @@ public class Main {
                 break;
 
         }
+        //Задание 6
+        int age = 19;
+        int salary = 58000;
+        if (age >= 23) {
+            if (salary >= 80000) {
+                System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 3 * 1.5) + " рублей");
+            } else if (salary >= 50000) {
+                System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 3 * 1.2) + " рублей");
+            }else{
+                System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 3) + " рублей");
+            }
+        }else{
+            if (salary >= 80000) {
+                System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 2 * 1.5) + " рублей");
+            } else if (salary >= 50000) {
+                System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 2 * 1.2) + " рублей");
+            }else{
+                System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 2) + " рублей");
+            }
+        }
+        //Задача 7
 
+        age = 25;
+        salary = 60_000;
+        float wantedSum = 330_000f;
+        float procent = 0.1f;
+
+        if(age<23){
+            procent = procent + 0.01f;
+        }else if(age<30){
+            procent = procent + 0.005f;
+        }
+
+        if(salary>80000){
+            procent=procent-0.007f;
+        }
+        float payment=wantedSum * procent/12f + wantedSum/12f;
+        if(payment > 0.5f*salary){
+            System.out.println("Максимальный платеж при ЗП "+ salary + " равен " +(0.5f*salary)+
+                    " рублей. Платеж по кредиту " +payment+ " рублей. Отказано");
+        }else {
+            System.out.println("Максимальный платеж при ЗП "+ salary + " равен " +(0.5f*salary)+
+                    " рублей. Платеж по кредиту " +payment+ " рублей. Одобрено");
+        }
 
     /////
     }
